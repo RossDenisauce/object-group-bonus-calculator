@@ -60,5 +60,11 @@ if(Number(employee.annualSalary) > 65000){
 }
 console.log('bonusPercentage:', bonusPercentage);
   //min/max bonus
-
+if(bonusPercentage > 0.13){
+  bonusPercentage = 0.13;
+}
+else if(bonusPercentage < 0.0){
+bonusPercentage = 0;
+}
+console.log('bonusPercentage:', bonusPercentage);
 } //end calculateEmployee
