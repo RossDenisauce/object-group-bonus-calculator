@@ -49,15 +49,16 @@ function calculateEmployee(employee){
     bonusPercentage = 0;
   } //end other
   console.log('bonus after review rating check:', bonusPercentage);
-
   //employee number
   if(employee.employeeNumber.length === 4){
-    console.log('oldschool cat');
     bonusPercentage += 0.05;
   } //end oldschool
 console.log('bonusPercentage:', bonusPercentage);
   //max salary
-
+if(Number(employee.annualSalary) > 65000){
+  bonusPercentage -= 0.01;
+}
+console.log('bonusPercentage:', bonusPercentage);
   //min/max bonus
 
 } //end calculateEmployee
