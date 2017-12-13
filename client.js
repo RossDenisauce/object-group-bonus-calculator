@@ -55,13 +55,19 @@ function calculateEmployee(employee){
   //max salary
 if(Number(employee.annualSalary) > 65000){
   bonusPercentage -= 0.01;
-}
+} //end less percentage
   //min/max bonus
 if(bonusPercentage > 0.13){
   bonusPercentage = 0.13;
-}
+} //end bonus too high
 else if(bonusPercentage < 0.0){
 bonusPercentage = 0;
-}
-console.log('bonusPercentage:', bonusPercentage);
+} //end no negatives
+var objectToReturn = {
+  name: employee.name,
+  bonusPercentage: bonusPercentage,
+  totalCompensation: Number(employee.annualSalary) + Number(employee.annualSalary) * bonusPercentage,
+  totalBonus: Number(employee.annualSalary) * bonusPercentage
+}; // end object to Return
+return objectToReturn;
 } //end calculateEmployee
